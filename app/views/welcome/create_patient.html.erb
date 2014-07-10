@@ -1,0 +1,115 @@
+<head>
+<style>
+a:link
+{
+color: blue;
+}
+
+a:visited
+{
+	color: red;
+}
+a:active
+{
+	color: purple;
+}
+a:hover
+{
+	background-color: teal;
+	text-decoration: none;
+	color: red;
+}
+input:focus, textarea:focus
+{
+	background: silver;
+}
+input[type=radio]
+{
+	display: none;
+}
+input[type=radio]+label
+{
+
+	display: inline-block;
+	background-color: silver;
+	margin: -2px;
+	padding: 10px 20px;
+}
+input[type=radio]:checked+label
+{
+
+	background-color: gray;
+}
+</style>
+</head>
+<script language="javascript">
+function func()
+{
+var a,b,c,d,e,f;
+a=document.getElementById("na").value;
+b=document.getElementById("ma");
+c=document.getElementById("fe");
+d=document.getElementById("add").value;
+f=document.getElementById("ter");
+e=document.getElementById("ag").value;
+if(a=="")
+alert("name cannot be blank!!!");
+if(!b.checked && !c.checked)
+alert("gender cannot be blank!!!");
+if(d=="")
+alert("address cannot be blank!!!");
+if(e==21)
+alert("You can change the age!")
+if(!f.checked)
+alert("You havn\'t accepted terms and conditions!!!");
+
+}
+</script>
+
+</head>
+<body>
+<form name="fo" action="/save_patient" method="post">
+<fieldset>
+<legend>Patient Profile :</legend>
+Name     :  <input type="text" placeholder="First Name" id="na" name="patient_name"><p>
+Gender   :  <input type="radio" name="patient_gender" value="Male" id="ma"><label for="ma">Male</label>    <input type="radio" value="Female" name="patient_gender" id="fe"><label for="fe">Female</label><p>
+Address  :  <textarea rows="3" cols="30" placeholder="Enter your Address" id="add" name="patient_address">
+</textarea><p>
+Age      : <select name="patient_age" id="ag">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option selected>21</option>
+<option>22</option>
+<option>23</option>
+<option>24</option>
+<option>25</option>
+<option>26</option>
+<option>27</option>
+<option>28</option>
+<option>29</option>
+<option>30</option></select><p>
+
+<input type="checkbox" id="ter" checked> I hereby declare that above information is true and correct to the best of my knowledge and belief.<p>
+<input type="submit" value="Save" onclick="return func();">  <input type="reset" value="Reset">
+</fieldset>
+</form>
+<br>
+<a href="/">Back</a>

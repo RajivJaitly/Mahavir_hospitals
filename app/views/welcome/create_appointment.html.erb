@@ -1,0 +1,168 @@
+<head>
+<style>
+a:link
+{
+color: blue;
+}
+
+a:visited
+{
+	color: red;
+}
+a:active
+{
+	color: purple;
+}
+a:hover
+{
+	background-color: teal;
+	text-decoration: none;
+	color: red;
+}
+input:focus, textarea:focus
+{
+	background: silver;
+}
+</style>
+</head>
+<script language="javascript">
+function func()
+{
+var a,b,c,d,e,f;
+a=document.getElementById("na").value;
+b=document.getElementById("ma");
+c=document.getElementById("fe");
+d=document.getElementById("add").value;
+f=document.getElementById("ter");
+e=document.getElementById("ag").value;
+if(a=="")
+alert("name cannot be blank!!!");
+if(!b.checked && !c.checked)
+alert("gender cannot be blank!!!");
+if(d=="")
+alert("address cannot be blank!!!");
+if(e==21)
+alert("You can change the age!")
+if(!f.checked)
+alert("You havn\'t accepted terms and conditions!!!");
+
+}
+</script>
+
+</head>
+<body>
+<form name="fo" action="/save_appointment" method="post">
+<fieldset>
+<legend>Appointment :</legend>
+Patient List     :  <select name="app_pname">
+<% @patients.each do |pat| %>
+<option><%= pat.name %></option>
+<% end %>
+</select>
+<p>
+
+Doctor List     :  <select name="app_dname">
+<% @doctors.each do |doc| %>
+<option><%= doc.name %></option>
+<% end %>
+</select>
+<p>
+
+Date of Appointment : <p>
+Time of Appointment : <select name="hour">
+<option selected disabled><%= @t.hour %></option>
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+<option>24</option></select> : <select name="min">
+<option selected disabled><%= @t.min %></option>
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+<option>24</option>
+<option>25</option>
+<option>26</option>
+<option>27</option>
+<option>28</option>
+<option>29</option>
+<option>30</option>
+</select> : <select name="sec">
+<option selected disabled><%= @t.sec %></option>
+<option>01</option>
+<option>02</option>
+<option>03</option>
+<option>04</option>
+<option>05</option>
+<option>06</option>
+<option>07</option>
+<option>08</option>
+<option>09</option>
+<option>10</option>
+<option>11</option>
+<option>12</option>
+<option>13</option>
+<option>14</option>
+<option>15</option>
+<option>16</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+<option>24</option>
+<option>25</option>
+<option>26</option>
+<option>27</option>
+<option>28</option>
+<option>29</option>
+<option>30</option></select>
+
+<p>
+
+<input type="submit" value="Save" onclick="return func();">  <input type="reset" value="Reset">
+</fieldset>
+</form>
+<br>
+<a href="/">Back</a>
