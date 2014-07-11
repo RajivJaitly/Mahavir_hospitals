@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
   def create_appointment
   	@patients = Patient.all
   	@doctors = Doctor.all
-  	@t = Time.now
+  
   	
   end
 
@@ -26,7 +26,7 @@ class WelcomeController < ApplicationController
   end
 
   def save_appointment
-  	Appointment.create(patient_name: params[:app_pname], doctor_name: params[:app_dname])
+  	Appointment.create(patient_name: params[:app_pname], doctor_name: params[:app_dname], date: params[:da], time: params[:ti])
   	redirect_to root_path
   end
 
